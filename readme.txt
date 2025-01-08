@@ -1,0 +1,1 @@
+"# easyGarden app description" 
