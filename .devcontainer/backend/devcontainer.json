@@ -2,5 +2,5 @@
     "name": "Python container",
     "dockerComposeFile": "../../docker-compose.yml",
     "service": "backend",
-    "workspaceFolder": "/workspace/backend-src"
+    "workspaceFolder": "/workspaces/backend-src"
 }

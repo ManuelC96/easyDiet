@@ -1,0 +1,7 @@
+{
+    "name": "MySql container",
+    "dockerComposeFile": "../../docker-compose.yml",
+    "service": "database",
+    "workspaceFolder": "/workspaces/database-src"
+    
+}
