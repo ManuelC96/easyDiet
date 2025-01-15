@@ -2,5 +2,6 @@
     "name": "Node container",
     "dockerComposeFile": "../../docker-compose.yml",
     "service": "frontend",
-    "workspaceFolder": "/workspaces/frontend-src"
+    "workspaceFolder": "/workspaces/frontend-src",
+    "shutdownAction": "stopCompose"
 }

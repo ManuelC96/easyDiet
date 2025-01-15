@@ -2,6 +2,7 @@
     "name": "MySql container",
     "dockerComposeFile": "../../docker-compose.yml",
     "service": "database",
-    "workspaceFolder": "/workspaces/database-src"
+    "workspaceFolder": "/workspaces/database-src",
+    "shutdownAction": "stopCompose"
     
 }
