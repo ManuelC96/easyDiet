@@ -8,5 +8,5 @@ WORKDIR /workspaces/backend-src
 
 COPY requirements.txt /workspaces/backend-src
 
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt  
 

@@ -2,6 +2,11 @@
     "name": "Node container",
     "dockerComposeFile": "../../docker-compose.yml",
     "service": "frontend",
+    "customizations":{
+        "vscode":{
+            "extensions":["Angular.ng-template","ritwickdey.LiveServer","christian-kohler.npm-intellisense"]
+        }
+    },
     "workspaceFolder": "/workspaces/frontend-src",
     "shutdownAction": "stopCompose"
 }

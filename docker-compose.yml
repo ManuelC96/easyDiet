@@ -4,33 +4,29 @@ services:
     volumes:
       - ./backend-src:/workspaces/backend-src/ 
     depends_on:
-      - database
+      - db
     command: sleep infinity
-    # ports:
-    #   - 5001:5000
+    ports:
+      - 5001:5000
     # # command: ["flask db init", "flask db migrate -m 'Initial migration'","flask db upgrade"]
   # ...
   frontend:
     build: /.devcontainer/frontend
     volumes:
       - ./frontend-src:/workspaces/frontend-src/  
-    command: ['sleep infinity','curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash']
+    command: 'sleep infinity'
     depends_on:
       - backend
   # ...
-  database:
-    build: /.devcontainer/database
+  db:
+    image: mysql:8.0.39
     ports:
-      - 9966:3306  
+      - 9876:3306
     environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=diet_db
-      - MYSQL_USER=admin
-      - MYSQL_PASSWORD=secret
+      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_DATABASE: 'SQLdatabase'
     volumes:
-      - sqldata:/workspaces/database-src/
-      - ./init-db/init.sql:/docker-entrypoint-initdb.d/init.sql
-    command: sleep infinity
-  # ... 
+      - sqldata:/var/lib/mysql
+      - ./init-db/initdb.sql:/docker-entrypoint-initdb.d/initdb.sql
 volumes:
   sqldata:
