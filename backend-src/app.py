@@ -10,6 +10,19 @@ CORS(app)
 db.init_app(app)
 migrate = Migrate(app, db)
 
+@app.route('/test-db')
+def test_db():
+    try:
+        # Esegui una query di test
+        result = db.session.execute('SELECT 1').scalar()
+        if result == 1:
+            return "Connesso al database con successo!"
+        else:
+            return "Connessione fallita!"
+    except Exception as e:
+        return f"Errore: {str(e)}"
+
+
 @app.route('/diet-plans', methods=['GET'])
 def get_diet_plans():
     plans = DietPlan.query.all()

@@ -1,6 +1,6 @@
 services:
   backend:
-    build: /.devcontainer/backend
+    build: .devcontainer/backend
     volumes:
       - ./backend-src:/workspaces/backend-src/ 
     depends_on:
@@ -11,7 +11,7 @@ services:
     # # command: ["flask db init", "flask db migrate -m 'Initial migration'","flask db upgrade"]
   # ...
   frontend:
-    build: /.devcontainer/frontend
+    build: .devcontainer/frontend
     volumes:
       - ./frontend-src:/workspaces/frontend-src/  
     command: 'sleep infinity'
@@ -24,7 +24,7 @@ services:
       - 9876:3306
     environment:
       MYSQL_ROOT_PASSWORD: 'root'
-      MYSQL_DATABASE: 'SQLdatabase'
+      MYSQL_DATABASE: 'db_diet'
     volumes:
       - sqldata:/var/lib/mysql
       - ./init-db/initdb.sql:/docker-entrypoint-initdb.d/initdb.sql
