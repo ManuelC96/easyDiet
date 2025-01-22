@@ -1,0 +1,20 @@
+<div class="widget-header">
+    <h2>
+        Colazione
+    </h2>
+</div>
+<div class="widget-content">
+    @for(j of i;track $index)
+    {
+        <ul hidden #dietFoodList>
+            <li>cereali</li>
+            <li>frutta</li>
+            <li>latte</li>
+            <li>{{$index}}</li>
+        </ul>
+    }
+    <button (click)="decrement()">previous</button>
+    <button (click)="increment()">next</button>
+    
+    
+</div>

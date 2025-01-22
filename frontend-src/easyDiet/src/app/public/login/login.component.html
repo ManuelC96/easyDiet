@@ -1,0 +1,39 @@
+<div class="login-container">
+    <div class="login-card">
+      <div class="logo">
+        <img src="../../assets/logo.png" alt="easyDiet Logo" />
+        <h1>easyDiet</h1>
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            id="username"
+            type="text"
+            formControlName="username"
+            placeholder="Enter your username"
+            class="form-control"
+          />
+          <div *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.invalid" class="error">
+            Username is required.
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            id="password"
+            type="password"
+            formControlName="password"
+            placeholder="Enter your password"
+            class="form-control"
+          />
+          <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid" class="error">
+            Password must be at least 6 characters.
+          </div>
+        </div>
+  
+        <button type="submit" [disabled]="loginForm.invalid" class="btn">Login</button>
+      </form>
+    </div>
+  </div>
