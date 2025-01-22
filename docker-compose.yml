@@ -8,7 +8,6 @@ services:
     command: sleep infinity
     ports:
       - 5001:5000
-    # # command: ["flask db init", "flask db migrate -m 'Initial migration'","flask db upgrade"]
   # ...
   frontend:
     build: .devcontainer/frontend

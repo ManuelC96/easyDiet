@@ -8,4 +8,5 @@ RUN mkdir -p /workspaces/frontend-src
 WORKDIR /workspaces/frontend-src
 
 RUN npm install -g @angular/cli 
-# 
+
+RUN apk add curl
