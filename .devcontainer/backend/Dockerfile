@@ -12,3 +12,5 @@ COPY requirements.txt /workspaces/backend-src
 
 RUN pip install -r requirements.txt  
 
+RUN apk --no-cache add curl
+

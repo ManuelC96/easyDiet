@@ -22,11 +22,13 @@ services:
     image: mysql:8.0.39
     ports:
       - 9876:3306
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 'root'
-      MYSQL_DATABASE: 'db_diet'
+      MYSQL_DATABASE: 'easy_diet_db'
     volumes:
       - sqldata:/var/lib/mysql
       - ./init-db/initdb.sql:/docker-entrypoint-initdb.d/initdb.sql
+    
 volumes:
   sqldata:
