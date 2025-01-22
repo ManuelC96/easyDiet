@@ -4,3 +4,5 @@ export interface DietInfo {
     duration?: number;
     kcal?: number;
 }
+
+

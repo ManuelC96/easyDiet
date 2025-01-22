@@ -1,5 +1,6 @@
 import { Component, input } from '@angular/core';
-import { DietInfo } from '../../models/diet.info';
+import { FoodItem } from '../../models/diet.interfaces';
+import { DietPlan } from '../../models/diet.interfaces';
 
 @Component({
   selector: 'app-diet-widget-header',
@@ -10,6 +11,6 @@ import { DietInfo } from '../../models/diet.info';
 })
 export class DietWidgetHeaderComponent {
   // signal input del componente 
-  info = input.required<DietInfo>()
+  info = input.required<DietPlan>()
   
 }

@@ -1,7 +1,7 @@
-@for(el of dietPlans(); track $index)
+@for(el of dietPlans; track $index)
 {
 
-    <app-diet-widget [n]="$index" (count)="eventHandler($event)">
+    <app-diet-widget [n]="$index">
         <ng-container slot="widget-header">
             <app-diet-widget-header [info]="el"></app-diet-widget-header>
         </ng-container>
@@ -10,5 +10,5 @@
         </ng-container>
     </app-diet-widget>
 }
-  
+<button (click)="createSamplePlan()" class="create-diet-plan"></button>
 
