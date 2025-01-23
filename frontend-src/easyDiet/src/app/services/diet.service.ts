@@ -7,7 +7,7 @@ import { DietPlan, FoodItem } from '../models/diet.interfaces';
   providedIn: 'root'
 })
 export class DietService {
-  private baseUrl = 'http://backend:5000'; // Assumi che il backend Flask sia in esecuzione su questa URL
+  private baseUrl = 'http://easydiet-backend-1:5000'; // Assumi che il backend Flask sia in esecuzione su questa URL
 
   constructor(private http: HttpClient) {}
 
