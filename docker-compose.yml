@@ -5,15 +5,16 @@ services:
       - ./backend-src:/workspaces/backend-src/ 
     depends_on:
       - db
-    command: sleep infinity
+    command: flask run --host=0.0.0.0 --port=5000
+    environment:
+      FLASK_APP: /workspaces/backend-src/app.py
     ports:
-      - 5001:5000
+      - 5000:5000
   # ...
   frontend:
     build: .devcontainer/frontend
     volumes:
       - ./frontend-src:/workspaces/frontend-src/  
-    command: 'sleep infinity'
     depends_on:
       - backend
   # ...

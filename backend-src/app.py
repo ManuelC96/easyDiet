@@ -25,7 +25,8 @@ def get_diet_plans():
             'fats': plan.fats,
         } for plan in plans])
     # in caso di errore, restituire un messaggio di errore e un codice di stato 404
-    return jsonify({'message': 'Diet plans not found'}), 404
+    else:
+        return jsonify({'message': 'Diet plans not found'}), 404
 
 @app.route('/diet-plans', methods=['POST'])
 def create_diet_plan():
@@ -66,4 +67,4 @@ def delete_diet_plan(plan_id):
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000, debug=False)
